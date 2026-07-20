@@ -83,3 +83,34 @@ function DistanceBetween(p1,p2) {
 }
 create();
 particles();
+
+function getComputerChoice() {
+let choices = ["Rock", "Paper", "Scissors"];
+return choices[Math.floor(Math.random()*choices.length)]
+}
+
+function getHumanChoice() {
+   let choices = ["Rock", "Paper", "Scissors"];
+   
+    document.getElementById("rock").addEventListener("click", function() {
+
+        if (choices[0]) {
+            let ImageSpace = document.querySelector('.container3 .ImageSpace')
+            ImageSpace.innerHTML = '<img src="images/rock.png" alt="Rock">';
+        }
+    })
+
+    document.getElementById("paper").addEventListener("click", function() {
+         if (choices[1]) {
+            let ImageSpace = document.querySelector('.container3 .ImageSpace')
+            ImageSpace.innerHTML = '<img src="images/paper.png" alt="Paper">';
+        }
+     }), 
+
+    document.getElementById("scissors").addEventListener("click", function() {
+ if (choices[2]) {
+            let ImageSpace = document.querySelector('.container3 .ImageSpace')
+            ImageSpace.innerHTML = '<img src="images/scissors.png" alt="Scissors">';
+        }
+})
+}
