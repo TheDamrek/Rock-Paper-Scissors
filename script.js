@@ -177,31 +177,41 @@ function playRound(humanChoice, computerChoice) {
     document.getElementById('computerScore').textContent = computerScore; 
      document.getElementById('score').textContent = humanScore;
 
+   setTimeout (function(){
+    
    if (roundsPlayed === 5 && humanScore > computerScore){
-    console.log("You win the game!")
+    alert("You win the game!")
     roundsPlayed = 0;
     humanScore = 0;
     computerScore = 0;
     document.getElementById('score').textContent = humanScore;
     document.getElementById('computerScore').textContent = computerScore;
+    document.querySelector('.container3 .ImageSpace').innerHTML = "";
+    document.querySelector('.container4 .ImageSpace').innerHTML = "";
    }
    else if (roundsPlayed === 5 && computerScore > humanScore){
-    console.log("The computer wins the game!")
+    alert("The computer wins the game!")
     roundsPlayed = 0;
     humanScore = 0;
     computerScore = 0;
     document.getElementById('score').textContent = humanScore;
     document.getElementById('computerScore').textContent = computerScore;
+    document.querySelector('.container3 .ImageSpace').innerHTML = "";
+    document.querySelector('.container4 .ImageSpace').innerHTML = "";
    }
    else if (roundsPlayed === 5 && computerScore === humanScore){
-    console.log("Draw!")
+    alert("Draw!")
     roundsPlayed = 0;
     humanScore = 0;
     computerScore = 0;
     document.getElementById('score').textContent = humanScore;
     document.getElementById('computerScore').textContent = computerScore;
+    document.querySelector('.container3 .ImageSpace').innerHTML = "";
+    document.querySelector('.container4 .ImageSpace').innerHTML = "";
    }
-}
+
+   }, 500);
+   }
 
 
 getHumanChoice();

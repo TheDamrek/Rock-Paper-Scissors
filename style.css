@@ -27,6 +27,18 @@ html, body {
     transform: translateX(-50%, -50%);
     left: 10%;
     top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .ImageSpace{
+        img{
+            height: 20vh;
+            width: 20vh;
+
+        }
+    }
 }
 
 .container4 {
@@ -35,6 +47,18 @@ html, body {
     transform: translateX(-50%, -50%);
     left: 75%;
     top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .ImageSpace{
+        img{
+            height: 20vh;
+            width: 20vh;
+
+        }
+    }
 }
 
 .container1 {
