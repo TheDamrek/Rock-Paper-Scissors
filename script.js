@@ -136,6 +136,8 @@ let computerScore = 0;
 let roundsPlayed = 0;
 
 function playRound(humanChoice, computerChoice) {
+    roundsPlayed++;
+
     if (computerChoice === "Rock"){
        let ImageSpace = document.querySelector('.container4 .ImageSpace')
             ImageSpace.innerHTML = '<img src="images/rock.png" alt="Rock">';  
@@ -175,11 +177,25 @@ function playRound(humanChoice, computerChoice) {
     document.getElementById('computerScore').textContent = computerScore; 
      document.getElementById('score').textContent = humanScore;
 
-     if (humanScore === 5)
+   if (roundsPlayed === 5 && humanScore > computerScore){
+    console.log("You win the game!")
+    roundsPlayed = 0;
+    humanScore = 0;
+    computerScore = 0;
+   }
+   else if (roundsPlayed === 5 && computerScore > humanScore){
+    console.log("The computer wins the game!")
+    roundsPlayed = 0;
+    humanScore = 0;
+    computerScore = 0;
+   }
+   else if (roundsPlayed === 5 && computerScore === humanScore){
+    console.log("Draw!")
+    roundsPlayed = 0;
+    humanScore = 0;
+    computerScore = 0;
+   }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
 
