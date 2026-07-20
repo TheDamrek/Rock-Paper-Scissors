@@ -87,6 +87,8 @@ particles();
 function getComputerChoice() {
 let choices = ["Rock", "Paper", "Scissors"];
 return choices[Math.floor(Math.random()*choices.length)]
+
+      
 }
 
 function getHumanChoice() {
@@ -97,6 +99,11 @@ function getHumanChoice() {
         if (choices[0]) {
             let ImageSpace = document.querySelector('.container3 .ImageSpace')
             ImageSpace.innerHTML = '<img src="images/rock.png" alt="Rock">';
+
+             let computerSelection = getComputerChoice();
+
+            playRound("Rock", computerSelection)
+        
         }
     })
 
@@ -104,13 +111,75 @@ function getHumanChoice() {
          if (choices[1]) {
             let ImageSpace = document.querySelector('.container3 .ImageSpace')
             ImageSpace.innerHTML = '<img src="images/paper.png" alt="Paper">';
+
+             let computerSelection = getComputerChoice();
+
+            playRound("Paper", computerSelection)
         }
-     }), 
+     }) 
 
     document.getElementById("scissors").addEventListener("click", function() {
  if (choices[2]) {
             let ImageSpace = document.querySelector('.container3 .ImageSpace')
             ImageSpace.innerHTML = '<img src="images/scissors.png" alt="Scissors">';
+
+            let computerSelection = getComputerChoice();
+
+            playRound("Scissors", computerSelection)
         }
 })
 }
+
+
+let humanScore = 0;
+let computerScore = 0;
+let roundsPlayed = 0;
+
+function playRound(humanChoice, computerChoice) {
+    if (computerChoice === "Rock"){
+       let ImageSpace = document.querySelector('.container4 .ImageSpace')
+            ImageSpace.innerHTML = '<img src="images/rock.png" alt="Rock">';  
+    }
+    else if (computerChoice === "Paper"){
+         let ImageSpace = document.querySelector('.container4 .ImageSpace')
+            ImageSpace.innerHTML = '<img src="images/paper.png" alt="Paper">';
+    }
+    else if(computerChoice === "Scissors"){
+         let ImageSpace = document.querySelector('.container4 .ImageSpace')
+            ImageSpace.innerHTML = '<img src="images/scissors.png" alt="Scissors">';
+    }
+
+
+
+    if (humanChoice === computerChoice){
+        console.log("Draw!");
+    }
+
+    else if (humanChoice === "Scissors" && computerChoice === "Paper" 
+        || humanChoice === "Rock" && computerChoice === "Scissors"
+        || humanChoice === "Paper" && computerChoice === "Rock"
+    ) {
+        humanScore++;
+        
+    }
+
+    else if (humanChoice === "Scissors" && computerChoice === "Rock" 
+        || humanChoice === "Rock" && computerChoice === "Paper"
+        || humanChoice === "Paper" && computerChoice === "Scissors"
+    ) {
+        computerScore++;
+    }
+
+
+    
+    document.getElementById('computerScore').textContent = computerScore; 
+     document.getElementById('score').textContent = humanScore;
+
+     if (humanScore === 5)
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
