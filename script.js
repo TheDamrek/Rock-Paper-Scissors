@@ -182,20 +182,29 @@ function playRound(humanChoice, computerChoice) {
     roundsPlayed = 0;
     humanScore = 0;
     computerScore = 0;
+    document.getElementById('score').textContent = humanScore;
+    document.getElementById('computerScore').textContent = computerScore;
    }
    else if (roundsPlayed === 5 && computerScore > humanScore){
     console.log("The computer wins the game!")
     roundsPlayed = 0;
     humanScore = 0;
     computerScore = 0;
+    document.getElementById('score').textContent = humanScore;
+    document.getElementById('computerScore').textContent = computerScore;
    }
    else if (roundsPlayed === 5 && computerScore === humanScore){
     console.log("Draw!")
     roundsPlayed = 0;
     humanScore = 0;
     computerScore = 0;
+    document.getElementById('score').textContent = humanScore;
+    document.getElementById('computerScore').textContent = computerScore;
    }
 }
+
+
+getHumanChoice();
 
 
 
